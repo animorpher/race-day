@@ -1,0 +1,22 @@
+// Early adults run at 9:30AM, late adults at 11AM, all youth at 12:30PM
+// Adults > 18, youth < 18
+// Early adults get race number >= 1000, all others <1000
+
+var raceNumber = Math.floor(Math.random()*1000);
+
+var runnerAge = prompt('How old are you?');
+
+var registrationEarly = prompt('Did you register early?');
+
+if (runnerAge > 18 && registrationEarly === 'yes' || 'Yes') {
+    raceNumber = (raceNumber + 1000)
+}
+if (runnerAge > 18) {
+    if (registrationEarly === 'yes' || 'Yes') {
+        console.log(`You will race at 9:30AM and your race number is ${raceNumber}`)
+    } else {
+        console.log(`You will race at 11AM and your race number is ${raceNumber}`)
+    }
+} else if (runnerAge < 18) {
+    console.log('You will race at 12:30PM and your race number is ${raceNumber}')
+}
